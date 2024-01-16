@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin: 10px 0;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="password"] {
+    width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    margin: 20px 1%;
+    padding: 10px;
+    border: none;
+    background-color: lightsalmon;;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+    background-color: lightsalmon;
+}
+
+button[type=submit] {
+    font-size: 12px;
+}
+
+
+
+.prev, .next {
+    width: 20%;
+    margin: 20px 1%;
+    padding: 10px;
+    border: none;
+    background-color: lightsalmon;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.prev {
+    float: left;
+    background-color: lightsalmon;
+}
+
+.next {
+    float: right;
+    background-color: lightsalmon;
+
+}
+
+.next_button {
+    background-color: lightsalmon;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+  }
+
+#showUserAgreement {
+    margin-bottom: 50px;
+}
+
+input.invalid-input {
+    border: 2px solid red;
+}
+
+
+
+
+

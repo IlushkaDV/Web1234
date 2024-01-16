@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tests.css') }}">
+</head>
+<div id="startText">
+    <p style="color: white">Автомобильный тестик</p>
+</div>
+<body>
+<button type="button" class="btn btn-primary" id="startTestButton">
+    Начать тест
+</button>
+
+<div id="questionContainer" style="display: none;">
+    <h3 id="question"></h3>
+    <div id="options" style="text-align: left;"></div>
+    <div class="buttonContainer">
+        <button id="nextButton">Следующий вопрос</button>
+    </div>
+</div>
+
+<div id="resultContainer" style="display: none;">
+    <h3 id="resultText"></h3>
+</div>
+
+<script>
+    const questions = [
+    {
+        "question": "Кто из перечисленных инженеров считается отцом автомобиля?",
+        "options": ["Karl Benz", "Конформный биас", "Подтверждение гипотез", "Благосклонное отношение"],
+        "answer": 0
+    },
+    {
+        "question": "В каком году был создан первый автомобиль с внутренним сгоранием?",
+        "options": ["1885", "1901", "1920", "1899"],
+        "answer": 0
+    },
+    {
+        "question": "Какой автомобиль был первым массовым производителем на конвейере?",
+        "options": ["Ford Model T", "Chevrolet Suburban", "Volkswagen Beetle", "Toyota Corolla"],
+        "answer": 0
+    },
+    {
+        "question": "Какой автомобиль получил прозвище 'Жигули' в России?",
+        "options": ["Ford Model A", "Fiat 124", "Chevrolet Impala", "Volkswagen Golf"],
+        "answer": 1
+    },
+    {
+        "question": "Какой автомобиль считается первым электрическим автомобилем для массового производства?",
+        "options": ["Nissan Leaf", "Tesla Roadster", "Chevrolet Volt", "Baker Electric"],
+        "answer": 3
+    }
+];
+
+    let currentQuestion = 0;
+    let userAnswers = [];
+
+    const startText = document.getElementById('startText');
+    const startTestButton = document.getElementById('startTestButton');
+    const questionContainer = document.getElementById('questionContainer');
+    const resultContainer = document.getElementById('resultContainer');
+
+    startTestButton.addEventListener('click', () => {
+        startText.style.display = "none";
+        startTestButton.style.display = "none";
+        questionContainer.style.display = "block";
+        displayQuestion();
+    });
+
+    function displayQuestion() {
+        const current = questions[currentQuestion];
+        document.getElementById('question').innerHTML = current.question;
+        document.getElementById('options').innerHTML = current.options.map((option, index) => `
+        <input type="radio" name="answer" value="${index}"> ${option}<br>
+    `).join('');
+    }
+
+    document.getElementById('nextButton').addEventListener('click', () => {
+        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+        if (selectedAnswer) {
+            userAnswers.push(parseInt(selectedAnswer.value));
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                displayQuestion();
+            } else {
+                showResult();
+            }
+        } else {
+            alert('Пожалуйста, выберите ответ.');
+        }
+    });
+
+    function showResult() {
+        const score = calculateScore();
+        questionContainer.style.display = "none";
+        resultContainer.style.display = "block";
+        resultContainer.innerHTML = `<h3>Результат: ${score}%</h3><a href="/main"><button id="returnHomeButton">Вернуться на главную</button></a>`;
+
+    }
+
+    function calculateScore() {
+        const totalQuestions = questions.length;
+        const correctAnswers = userAnswers.filter((answer, index) => answer === questions[index].answer).length;
+        return (correctAnswers / totalQuestions) * 100;
+    }
+
+</script>
+</body>
+</html>
+

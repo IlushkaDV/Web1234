@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugatti</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="../../static/img/Bugatti_logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>NOTE!</strong>  The price of the car depends on the configuration.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+  <main>
+    <nav aria-label="breadcrumb" style=" ">
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Подписка на новости</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="subscriptionForm" action="/main" method="post">
+                                <div class="form-group">
+                                    <label for="email">Почта</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           aria-describedby="emailHelp" placeholder="Введите почту">
+                                    <small id="emailHelp" class="form-text text-muted">Нам необходима ваша почта для
+                                        отправления уведомлений о обновлениях</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                           placeholder="Введите пароль">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Подписаться на
+                                    обновления
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ,
+                    style="margin-top: 10px;margin-bottom: 20px; background-color: white; border-color: white; color:  lightsalmon">
+                Подписаться на обновления
+            </button>
+            <a href="/news">
+                <button type="button" class="btn btn-primary"
+                        style="margin-top: 10px;margin-bottom: 20px; background-color: white; border-color: white; color:  lightsalmon">
+                    Новости
+                </button>
+            </a>
+            <a href="/tests">
+                <button type="button" class="btn btn-primary"
+                        style="margin-top: 10px; margin-bottom: 20px; background-color: white; border-color: white; color: lightsalmon">
+                    Тестирование
+                </button>
+            </a>
+    </nav>
+      <div class="margin-after-nav" style="margin-bottom: 40px"></div>
+    <div class="container">
+      <div class="row">
+
+
+
+        <div class="col-md-6">
+          <h1>Information</h1>
+          <h3>Find out more about masterpieces of automotive art</h3>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../../static/img/Chiron1.jpg" class="d-block w-100" alt="Image 1">
+              </div>
+              <div class="carousel-item">
+                <img src="../../static/img/Veyron1.jpg" class="d-block w-100" alt="Image 2">
+              </div>
+              <div class="carousel-item">
+                <img src="../../static/img/Mistral.jpg" class="d-block w-100" alt="Image 3">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <img src="../../static/img/chiron2.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h5 class="card-title">Bugatti Chiron</h5>
+                  <p class="card-text">PRICE</p>
+      <p class="card-text">$3 000 000 - $6 000 000</p>
+                  <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <img src="../../static/img/Veyron2.png" class="card-img-top" alt="Image 2">
+                <div class="card-body card-body-veyron">
+                  <h5 class="card-title">Bugatti Veyron</h5>
+                  <p class="card-text">PRICE</p>
+      <p class="card-text">$2 000 000 - $4 000 000</p>
+                  <button data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="btn btn-primary">Learn More</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <img src="../../static/img/Mistral2.png" class="card-img-top" alt="Image 3">
+                <div class="card-body">
+                  <h5 class="card-title">Bugatti Mistral</h5>
+                  <p class="card-text">PRICE</p>
+      <p class="card-text">$5 000 000 - $11 000 000</p>
+      <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header">
+                <h6>
+                    Chiron
+                </h6>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="scrollable-block">
+                    <p>
+                      Bugatti Chiron, названный в честь великого гонщика Луи Широна, является флагманской моделью автомобилей Bugatti и наследником знаменитого Bugatti Veyron. Производство Chiron началось в 2016 году, и он был представлен как эволюционный шаг в мире гиперкаров. Bugatti ориентировалась на создание уникального автомобиля, способного предоставить непревзойденный уровень роскоши, производительности и инноваций.
+                    </p>
+            
+                    <p>Основные характеристики:</p>
+            
+                    <p>
+                      <strong>Двигатель:</strong>
+                      Bugatti Chiron оснащен 8,0-литровым W16-битурбированным двигателем, разработанным специально для этой модели. Этот двигатель производит огромную мощность, превышающую 1500 лошадиных сил.
+                    </p>
+            
+                    <p>
+                      <strong>Скорость и Ускорение:</strong>
+                      Chiron способен достигнуть захватывающей максимальной скорости, ограниченной электроникой, и превосходит 260 миль в час (418 км/ч). Ускорение от 0 до 60 миль в час занимает всего несколько секунд.
+                    </p>
+            
+                    <p>
+                      <strong>Дизайн и Материалы:</strong>
+                      Экстерьер Chiron сочетает в себе эстетику и аэродинамику, создавая великолепный внешний вид. Использование высококачественных материалов, таких как углеродное волокно и алюминий, не только обеспечивает прочность конструкции, но и снижает вес автомобиля.
+                    </p>
+            
+                    <p>
+                      <strong>Интерьер и Комфорт:</strong>
+                      Внутри Bugatti Chiron вы найдете роскошный интерьер с использованием выдающихся материалов, качественной кожи и инновационных технологий. Эргономика и комфорт были важными факторами в создании интерьера этого гиперкара.
+                    </p>
+            
+                    <p>
+                      <strong>Эксклюзивность:</strong>
+                      Каждый Bugatti Chiron уникален и поддается индивидуальной настройке под желания владельца, что добавляет эксклюзивность и роскошь этой модели.
+                    </p>
+            
+                    <p>
+                      Bugatti Chiron – это не только техническое достижение, но и произведение искусства в мире автомобилей, объединяющее в себе эффективность и стиль.
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h6>Veyron</h6>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body card-body-veyron">
+                  <div class="scrollable-block">
+                    <p>Bugatti Veyron — это легендарный гиперкар, представленный компанией Bugatti в 2005 году. Сразу же после выпуска он заявил о себе как о техническом чуде и воплощении инженерных идей. Этот автомобиль был назван в честь гонщика Луи Александра Жозефа Бугатти и гонки 24 часа Ле-Мана 1939 года, где Bugatti выиграл.</p>
+
+        <p>Bugatti Veyron был первым автомобилем, который преодолел 1000 лошадиных сил, и он стал одним из самых быстрых автомобилей в истории. Великолепный дизайн и невероятная производительность сделали Veyron объектом восхищения и статусным символом в мире автолюбителей.</p>
+
+        <p><strong>Характеристики:</strong></p>
+
+        <p><strong>Двигатель:</strong></p>
+        <p>   - 8.0-литровый W16 двигатель с четырьмя турбонаддувами.</p>
+        <p>   - Максимальная мощность: около 1001 л.с. (первые версии) до 1200 л.с. (Bugatti Veyron Super Sport).</p>
+        <p>   - Впечатляющий крутящий момент.</p>
+
+        <p><strong>Скорость и Ускорение:</strong></p>
+        <p>   - Максимальная скорость превышала 400 км/ч (в зависимости от версии).</p>
+        <p>   - Разгон до 100 км/ч занимал менее 2.5 секунд.</p>
+
+        <p><strong>Дизайн и Материалы:</strong>
+        <p>   - Узнаваемый дизайн с характерной хромированной маской радиатора.</p>
+        <p>   - Роскошный интерьер с премиальными материалами.</p>
+
+        <p><strong>Эксклюзивность:</strong>
+        <p>   - Ограниченное производство для подчеркивания эксклюзивности — всего несколько сотен экземпляров.</p>
+
+        <p>Bugatti Veyron стал символом роскоши, выдающейся инженерии и высокой производительности, устанавливая новые стандарты в мире автомобилей и оставаясь в истории как один из самых впечатляющих гиперкаров всех времен.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h6 class="mb-0">
+                  Mistral
+                </h6>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingTree" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="scrollable-block">
+                    <p>
+                      Bugatti Mistral – концепт-кар, представленный Bugatti в 2022 году. Этот эксклюзивный автомобиль стал продолжением великой традиции бренда Bugatti в создании элитных и выдающихся автомобилей. Имя "Mistral" вдохновлено ветром, который дует вдоль южного побережья Франции, и олицетворяет свежесть и силу инноваций, которые привносит этот концептуальный проект.
+                    </p>
+            
+                    <p>Основные характеристики:</p>
+            
+                    <p>
+                      <strong>Двигатель:</strong>
+                      <p>Bugatti Mistral оснащен мощным бензиновым двигателем W16.</p>
+                      <p>Максимальная мощность составляет внушительные 1500 лошадиных сил.</p>
+                      <p>Автомобиль способен разгоняться до 100 км/ч за всего несколько секунд, подчеркивая свою способность к экстремальным динамическим характеристикам.</p>
+                    </p>
+            
+                    <p>
+                      <strong>Дизайн и Материалы:</strong>
+                      <p>Эксклюзивный дизайн Mistral представляет собой симбиоз будущего и классической роскоши.</p>
+                      <p>Особое внимание уделено аэродинамике, что обеспечивает не только великолепный внешний вид, но и выдающуюся производительность на дороге.</p>
+            
+                    <p>
+                      <strong>Инновации и Технологии:</strong>
+                      <p>Bugatti Mistral оборудован передовыми технологиями в сфере автомобильной безопасности и управления.</p>
+                     <p>Использование современных материалов и инженерных решений делает этот автомобиль воплощением передовых технологий Bugatti.</p>
+                    <p>
+                      <strong>Эксклюзивность:</strong>
+                      <p>Bugatti Mistral представляет собой олицетворение роскоши и индивидуальности, подчеркивая статус своего владельца.</p>  
+                      <p>Каждый экземпляр Mistral создается под заказ, что обеспечивает уникальность и неповторимость каждого автомобиля.</p>
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h2>Car Purchase Form</h2>
+          <form id="carPurchaseForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="carModel">Car Model</label>
+              <input type="text" class="form-control" id="carModel">
+            </div>
+            <button type="submit" class="btn btn-primary" id="buyNowBtn">Buy Now</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </form>
+          <div class="alert alert-success" id="successAlert" role="alert" style="display: none;">
+            Successful purchase!
+          </div>
+          <div class="alert alert-danger" id="errorAlert" role="alert" style="display: none;">
+            Please fill in all fields before submitting
+          </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ 
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('carPurchaseForm').addEventListener('submit', function(event) {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var carModel = document.getElementById('carModel').value;
+      var successAlert = document.getElementById('successAlert');
+      var errorAlert = document.getElementById('errorAlert');
+
+      if (name && email && carModel) {
+        successAlert.style.display = 'block';
+        errorAlert.style.display = 'none';
+      } else {
+        errorAlert.style.display = 'block';
+        successAlert.style.display = 'none';
+      }
+      event.preventDefault();
+    });
+  </script> 
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>&copy; 2023 Bugatti Dealership</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

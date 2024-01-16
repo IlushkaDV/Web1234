@@ -1,0 +1,181 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  background-image: url('https://images.hdqwalls.com/download/blue-bugatti-chiron-sport-2020-4k-p1-3840x2400.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center; 
+}
+    .scrollable-block {
+      width: 500px; 
+      height: 700px; 
+      overflow: auto; 
+      border: 1px solid #ccc; 
+      background-color: #ffffff;
+      padding: 10px; 
+    }
+
+    header {
+      background-color: rgba(0, 86, 179, 0.8);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #ffffff;
+      padding: 15px 0;
+    }
+
+    header .navbar {
+  background-color: rgba(0, 86, 179, 0.5);
+  background-image: url('static/img/Bugatti-ChironWP1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+
+header .navbar-collapse {
+  background-color: rgba(0, 86, 179, 0.8);
+  background-image: url('static/img/Bugatti-ChironWP1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+    header a.navbar-brand,
+    header a.nav-link {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    header a.navbar-brand:hover,
+    header a.nav-link:hover {
+      color: #f8d01d !important; 
+    }
+
+    header .navbar-toggler {
+      border: 1px solid #ffffff;
+    }
+
+    header .navbar-toggler-icon {
+      background-color: #ffffff;
+    }
+    
+    header .navbar-nav .nav-item {
+      padding: 10px;
+    }
+
+    header .navbar-nav .nav-item a {
+      color: #ffffff !important;
+      font-size: 1rem;
+    }
+
+    header .navbar-nav .nav-item a:hover {
+      color: orange !important; 
+    }
+    main {
+      padding: 20px;
+    }
+    h1{ font-size: 34px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    font-weight: 100;
+    margin-top: 0; 
+      color: white;
+      font-family: "Open Sans",sans-serif;}
+    h3 {    font-size: 40px;
+      font-style: italic;
+      font-family: "Open Sans",gabriola;
+    line-height: 36px;
+    color: white; }
+     h2 {
+      color: #343a40;
+    }
+  h5 {
+color:#ffffff;
+font-family: 'Open Sans', desdemona;
+font-size: 20px;
+  }
+h4{
+    font-family: 'Open Sans', sans-serif;
+  }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+  }
+
+  .card-body {
+    background: rgba(255, 255, 255, 0.3); 
+    color: #000; 
+    border-radius: 15px;
+    padding: 10px;
+  }
+
+    footer {
+      background-color: #343a40;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+h6 {
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', desdemona;
+  font-size: 20px;
+}
+    footer p {
+      margin: 0;
+      text-align: center;
+    }
+
+  
+    #carouselExampleIndicators,
+    .card-img-top,
+    .modal-header {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .carousel-item img {
+      height: 300px;
+      width: 370px;
+    }
+
+    .card-body,
+    .modal-body {
+      background: rgba(255, 255, 255, 0.3);
+      text-align: center;
+    }
+
+    #Modal,
+    .modal-content {
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #343a40;
+      border-color: #343a40;
+    }
+
+    .btn-primary:hover {
+      background-color: orangered;
+      border-color: orangered;
+    }
+    .breadcrumb {
+    background-color: transparent;
+  }
+
+  .breadcrumb-item {
+    color: #ffffff; 
+  }
+
+  .breadcrumb-item a {
+    color: #ffffff; 
+  }
+
+  .breadcrumb-item.active {
+    color:orangered;
+  }

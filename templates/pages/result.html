@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Вход</title>
+</head>
+
+<body>
+<div class="centered-text">
+    <h2>Поздравляю, {{ user_name }}, вы успешно зарегистрированы!</h2>
+    <p>Проверьте правильность заполненных данных:</p>
+    <ul>
+        <li>Имя: {{ user_name }}</li>
+        <li>Фамилия: {{ user_fam }}</li>
+        <li>Отчество: {{ user_ot }}</li>
+        <li>Город: {{ user_sity }}</li>
+        <li>Дата рождения: {{ user_bith }}</li>
+        <li>Email: {{ user_email }}</li>
+    </ul>
+    <a href="/main" class="next_button" style="color:black">Продолжить</a></div><br>
+</div>
+</body>
+</html>
